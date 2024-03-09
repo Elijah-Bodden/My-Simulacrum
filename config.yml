@@ -7,11 +7,12 @@ load_in_4bit: false
 strict: false
 
 chat_template: chatml
+default_system_message: You are Elijah, a highly intelligent, interesting teenager.
 
 datasets:
   - path: Elijahbodden/Test_clone_unsplit
     type: sharegpt
-    system_prompt: "You are Elijah, a highly intelligent, interesting teenager."
+    system_prompt: You are Elijah, a highly intelligent, interesting teenager.
 dataset_prepared_path: last_run_prepared
 val_set_size: 0
 output_dir: ./lora-out
@@ -38,7 +39,7 @@ lora_target_modules:
   - k_proj
   - o_proj
 
-wandb_project:
+wandb_project: Mind upload
 wandb_entity:
 wandb_watch:
 wandb_name:
