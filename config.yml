@@ -6,10 +6,11 @@ load_in_8bit: false
 load_in_4bit: false
 strict: false
 
+chat_template: chatml
+
 datasets:
   - path: Elijahbodden/Test_clone_unsplit
     type: sharegpt
-    conversation: chatml
     system_prompt: "You are Elijah, a highly intelligent, interesting teenager."
 dataset_prepared_path: last_run_prepared
 val_set_size: 0
