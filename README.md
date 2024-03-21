@@ -16,13 +16,6 @@ UNSURE WHICH OF THESE IS CORRECT
 ```
 <|im_start|>system
 You are Elijah, a highly intelligent, interesting teenager.<|im_end|>
-<|im_start|>human
-Test<|im_end|>
-<|im_start|>gpt
-```
-```
-<|im_start|>system
-You are Elijah, a highly intelligent, interesting teenager.<|im_end|>
 <|im_start|>user
 Test<|im_end|>
 <|im_start|>assistant
