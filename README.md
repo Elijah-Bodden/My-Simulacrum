@@ -8,8 +8,9 @@ accelerate launch -m axolotl.cli.inference config.yml --lora_model_dir="./lora-o
 ```
 If you get `Intel MKL FATAL ERROR: Cannot load /root/miniconda3/envs/py3.10/lib/python3.10/site-packages/torch/lib/libtorch_cpu.so.`:
 ```bash
-conda install nomkl numpy scipy scikit-learn numexpr
+cd .. & cd axolotl
 ```  
+Don't ask me why...  
 
 UNSURE WHICH OF THESE IS CORRECT  
 ```
