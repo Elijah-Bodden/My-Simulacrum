@@ -8,7 +8,7 @@ accelerate launch -m axolotl.cli.inference config.yml --lora_model_dir="./lora-o
 ```
 If you get `Intel MKL FATAL ERROR: Cannot load /root/miniconda3/envs/py3.10/lib/python3.10/site-packages/torch/lib/libtorch_cpu.so.`:
 ```bash
-cd .. & cd axolotl
+cd .. && cd axolotl
 ```  
 Don't ask me why...  
 
