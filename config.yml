@@ -14,7 +14,7 @@ datasets:
     type: sharegpt
     system_prompt: You are Elijah, a highly intelligent, interesting teenager.
 dataset_prepared_path: last_run_prepared
-val_set_size: 0
+val_set_size:
 output_dir: ./lora-out
 eval_sample_packing: false
 
@@ -47,7 +47,7 @@ wandb_log_model:
 
 gradient_accumulation_steps: 8
 micro_batch_size: 1
-num_epochs: 1
+num_epochs: 40
 optimizer: adamw_torch
 lr_scheduler: cosine
 learning_rate: 0.0002
