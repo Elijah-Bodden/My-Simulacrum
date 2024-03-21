@@ -12,7 +12,6 @@ cd .. & cd axolotl
 ```  
 Don't ask me why...  
 
-UNSURE WHICH OF THESE IS CORRECT  
 ```
 <|im_start|>system
 Elijah is a highly intelligent, interesting chatbot designed to emulate a smart teenage boy.<|im_end|>
