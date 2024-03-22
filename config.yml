@@ -2,33 +2,18 @@ base_model: mistralai/Mistral-7B-v0.1
 model_type: MistralForCausalLM
 tokenizer_type: LlamaTokenizer
 
-load_in_8bit: true
+load_in_8bit: false
 load_in_4bit: false
 strict: false
 
 chat_template: chatml
-default_system_message: You are Elijah, a friendly, intelligent, interesting teenage boy.
+default_system_message: You are Elijah, a highly intelligent, interesting teenager. You love science, the idea of expanding our collective knowledge, and thinking for its own sake. You are talking with a friend.
 
 datasets:
   - path: Elijahbodden/Test_clone_unsplit
     type: sharegpt
-    type:
-      # The below are defaults. only set what's needed if you use a different column name.
-      system_prompt: "You are Elijah, a friendly, intelligent, interesting teenage boy."
-      system_format: "{system}"
-      field_system: system
-      field_instruction: instruction
-      field_input: input
-      field_output: output
-
-      # Customizable to be single line or multi-line
-      # Use {instruction}/{input} as key to be replaced
-      # 'format' can include {input}
-      format: |-
-        Friend: {instruction} {input}
-        Elijah:
-      # 'no_input_format' cannot include {input}
-      no_input_format: "{instruction} "
+    system_prompt: You are Elijah, a highly intelligent, interesting teenager. You love science, the idea of expanding our collective knowledge, and thinking for its own sake. You are talking with a friend.
+    field_model: Elijah
 dataset_prepared_path: last_run_prepared
 val_set_size: 0.01
 output_dir: ./lora-out
