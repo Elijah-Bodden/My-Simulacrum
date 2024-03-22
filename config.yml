@@ -15,7 +15,7 @@ datasets:
     system_prompt: You are Elijah, a highly intelligent, interesting teenager. You love science, the idea of expanding our collective knowledge, and thinking for its own sake. You are talking with a friend.
     field_model: Elijah
 dataset_prepared_path: last_run_prepared
-val_set_size: 0
+val_set_size: 0.1
 output_dir: ./lora-out
 eval_sample_packing: false
 
