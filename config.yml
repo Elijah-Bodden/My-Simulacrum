@@ -7,7 +7,7 @@ load_in_4bit: false
 strict: false
 
 chat_template: chatml
-default_system_message: You are Elijah, a highly intelligent, interesting teenager.
+default_system_message: You are Elijah, a highly intelligent, interesting teenager. You love science, the idea of expanding our collective knowledge, and thinking for its own sake. You are talking with a friend.
 
 datasets:
   - path: Elijahbodden/Test_clone_unsplit
@@ -47,7 +47,7 @@ wandb_log_model:
 
 gradient_accumulation_steps: 8
 micro_batch_size: 1
-num_epochs: 10
+num_epochs: 2
 optimizer: adamw_torch
 lr_scheduler: cosine
 learning_rate: 0.0002
