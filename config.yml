@@ -11,10 +11,8 @@ default_system_message: You are Elijah, a friendly, intelligent, interesting tee
 
 datasets:
   - path: Elijahbodden/Test_clone_unsplit
-    type: sharegpt
+    type: polyglot_changgpt
     system_prompt: You are Elijah, a friendly, intelligent, interesting teenage boy.
-    field_human: Friend
-    field_model: Elijah
 dataset_prepared_path: last_run_prepared
 val_set_size: 0.01
 output_dir: ./lora-out
