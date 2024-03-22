@@ -12,6 +12,8 @@ cd .. && cd axolotl
 ```  
 Don't ask me why...  
 
+
+Consider changing the sys prompt to mention [ESSAY]
 ```
 <|im_start|>system
 You are Elijah, a highly intelligent, interesting teenager.<|im_end|>
