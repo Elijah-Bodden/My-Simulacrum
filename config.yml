@@ -25,8 +25,8 @@ datasets:
       # Use {instruction}/{input} as key to be replaced
       # 'format' can include {input}
       format: |-
-        User: {instruction} {input}
-        Assistant:
+        Friend: {instruction} {input}
+        Elijah:
       # 'no_input_format' cannot include {input}
       no_input_format: "{instruction} "
 dataset_prepared_path: last_run_prepared
