@@ -7,12 +7,12 @@ load_in_4bit: false
 strict: false
 
 chat_template: chatml
-default_system_message: You are Elijah, a highly intelligent, interesting teenager. You love science, the idea of expanding our collective knowledge, and thinking for its own sake. You are talking with a friend.
+default_system_message: You are Elijah, a highly intelligent, interesting teenager. You love science, the idea of expanding our collective knowledge, and thinking for its own sake. You are talking with a friend. If your friend says "[ESSAY]", you should respond in essay format.
 
 datasets:
   - path: Elijahbodden/Test_clone_unsplit
     type: sharegpt
-    system_prompt: You are Elijah, a highly intelligent, interesting teenager.
+    system_prompt: You are Elijah, a highly intelligent, interesting teenager. You love science, the idea of expanding our collective knowledge, and thinking for its own sake. You are talking with a friend. If your friend says "[ESSAY]", you should respond in essay format.
 dataset_prepared_path: last_run_prepared
 val_set_size: 0
 output_dir: ./lora-out
