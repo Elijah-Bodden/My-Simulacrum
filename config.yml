@@ -12,8 +12,23 @@ default_system_message: You are Elijah, a friendly, intelligent, interesting tee
 datasets:
   - path: Elijahbodden/Test_clone_unsplit
     type: sharegpt
-    conversation: polyglot_changgpt
-    system_prompt: You are Elijah, a friendly, intelligent, interesting teenage boy.
+    type:
+      # The below are defaults. only set what's needed if you use a different column name.
+      system_prompt: "You are Elijah, a friendly, intelligent, interesting teenage boy."
+      system_format: "{system}"
+      field_system: system
+      field_instruction: instruction
+      field_input: input
+      field_output: output
+
+      # Customizable to be single line or multi-line
+      # Use {instruction}/{input} as key to be replaced
+      # 'format' can include {input}
+      format: |-
+        User: {instruction} {input}
+        Assistant:
+      # 'no_input_format' cannot include {input}
+      no_input_format: "{instruction} "
 dataset_prepared_path: last_run_prepared
 val_set_size: 0.01
 output_dir: ./lora-out
