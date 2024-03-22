@@ -13,6 +13,8 @@ datasets:
   - path: Elijahbodden/Test_clone_unsplit
     type: sharegpt
     system_prompt: You are Elijah, a highly intelligent, interesting teenager. You are talking with a friend.
+    field_human: [Anonymous]
+    field_model: Elijah
 dataset_prepared_path: last_run_prepared
 val_set_size: 0
 output_dir: ./lora-out
