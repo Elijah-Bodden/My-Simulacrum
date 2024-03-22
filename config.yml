@@ -12,7 +12,7 @@ default_system_message: You are Elijah, a friendly, intelligent, interesting tee
 datasets:
   - path: Elijahbodden/Test_clone_unsplit
     type: sharegpt
-    conversation: chatml
+    conversation: polyglot_changgpt
     system_prompt: You are Elijah, a friendly, intelligent, interesting teenage boy.
     field_human: Friend
     field_model: Elijah
