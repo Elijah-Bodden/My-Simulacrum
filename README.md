@@ -1,4 +1,5 @@
 # Mind-upload
+Maybe get rid of chatml template bc "assistant" is throwing the model off
 ```bash
 wget https://raw.githubusercontent.com/Elijah-Bodden/Mind-upload/main/run.bash && bash run.bash
 ```
