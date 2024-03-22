@@ -2,7 +2,7 @@ base_model: mistralai/Mistral-7B-v0.1
 model_type: MistralForCausalLM
 tokenizer_type: LlamaTokenizer
 
-load_in_8bit: false
+load_in_8bit: true
 load_in_4bit: false
 strict: false
 
