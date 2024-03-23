@@ -11,6 +11,6 @@ model_id = cfg['base_model']
 tok = AutoTokenizer.from_pretrained(model_id)
 ds = load_from_disk(f'last_run_prepared/{directory}/')
 row = ds[0]
-print(tok.decode(row['input_ids']))
 print(pd.DataFrame([{'token': tok.decode(i), 'label': l, 'id':i} for i,l in
               zip(row['input_ids'], row['labels'])]).to_string())
+print(tok.decode(row['input_ids']))
