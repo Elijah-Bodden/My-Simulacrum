@@ -1,6 +1,4 @@
 # Mind-upload
-Maybe get rid of chatml template bc "assistant" is throwing the model off
-
 To test custom formatting (after setting up):
 ```
 wget https://raw.githubusercontent.com/Elijah-Bodden/Mind-upload/main/config.yml
@@ -14,14 +12,8 @@ wget https://raw.githubusercontent.com/Elijah-Bodden/Mind-upload/main/run.bash &
 ```
 Then for inference:
 ```
-accelerate launch -m axolotl.cli.inference config.yml --lora_model_dir="./lora-out" --gradio
+cd .. && cd axolotl && accelerate launch -m axolotl.cli.inference config.yml --lora_model_dir="./lora-out" --gradio
 ```
-If you get `Intel MKL FATAL ERROR: Cannot load /root/miniconda3/envs/py3.10/lib/python3.10/site-packages/torch/lib/libtorch_cpu.so.`:
-```bash
-cd .. && cd axolotl
-```  
-Don't ask me why...  
-
 
 Consider changing the sys prompt to mention [ESSAY]
 ```
