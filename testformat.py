@@ -10,7 +10,7 @@ with open('config.yml', 'r') as f:
 model_id = cfg['base_model']
 tok = AutoTokenizer.from_pretrained(model_id)
 ds = load_from_disk(f'last_run_prepared/{directory}/')
-row = ds[0]
+row = ds[2]
 print(pd.DataFrame([{'token': tok.decode(i), 'label': l, 'id':i} for i,l in
               zip(row['input_ids'], row['labels'])]).to_string())
 print(tok.decode(row['input_ids']))
