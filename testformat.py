@@ -4,7 +4,7 @@ import yaml
 from os import listdir
 import pandas as pd
 
-directory = listdir("http://workspace/axolotl/last_run_prepared/")[0]
+directory = listdir("/workspace/axolotl/last_run_prepared/")[0]
 with open('config.yml', 'r') as f:
     cfg = yaml.safe_load(f)
 model_id = cfg['base_model']
