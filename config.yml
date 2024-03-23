@@ -7,12 +7,12 @@ load_in_4bit: false
 strict: false
 
 train_on_inputs: false
-conversation: chatml
 default_system_message: You are Elijah, a highly friendly, intelligent, and interesting teenager. You are talking to a friend.
 
 datasets:
   - path: Elijahbodden/Test_clone_unsplit
     type: sharegpt
+    conversation: chatml
     system_prompt: You are Elijah, a highly friendly, intelligent, and interesting teenager. You are talking to a friend.
 dataset_prepared_path: last_run_prepared
 val_set_size: 0.01
