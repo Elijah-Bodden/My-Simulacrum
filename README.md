@@ -1,7 +1,7 @@
 # Mind-upload
 Maybe get rid of chatml template bc "assistant" is throwing the model off
 
-To test custom formatting:
+To test custom formatting (after setting up):
 ```
 wget https://raw.githubusercontent.com/Elijah-Bodden/Mind-upload/main/config.yml
 wget https://raw.githubusercontent.com/Elijah-Bodden/Mind-upload/main/testformat.yml
