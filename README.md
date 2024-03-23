@@ -1,5 +1,14 @@
 # Mind-upload
 Maybe get rid of chatml template bc "assistant" is throwing the model off
+
+To test custom formatting:
+```
+wget https://raw.githubusercontent.com/Elijah-Bodden/Mind-upload/main/config.yml
+wget https://raw.githubusercontent.com/Elijah-Bodden/Mind-upload/main/testformat.yml
+CUDA_VISIBLE_DEVICES="" python -m axolotl.cli.preprocess config.yml
+python3 testformat.py
+```
+
 ```bash
 wget https://raw.githubusercontent.com/Elijah-Bodden/Mind-upload/main/run.bash && bash run.bash
 ```
