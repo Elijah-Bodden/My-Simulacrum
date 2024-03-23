@@ -7,13 +7,14 @@ load_in_4bit: false
 strict: false
 
 train_on_inputs: false
-default_system_message: You are Elijah, a highly friendly, intelligent, and interesting teenager. You are talking to a friend.
+special_tokens:
+  bos_token: "<s>"
+  eos_token: "</s>"
+  unk_token: "<unk>"
 
 datasets:
   - path: Elijahbodden/Test_clone_unsplit
-    type: sharegpt
-    conversation: chatml
-    system_prompt: You are Elijah, a highly friendly, intelligent, and interesting teenager. You are talking to a friend.
+    type: input_output
 dataset_prepared_path: last_run_prepared
 val_set_size: 0.01
 output_dir: ./lora-out
@@ -28,8 +29,7 @@ pad_to_sequence_len: true
 
 lora_r: 32
 lora_alpha: 16
-lora_dropout: 0.05
-lora_target_linear: true
+lora_dropout: 0.05lora_target_linear: true
 lora_fan_in_fan_out:
 lora_target_modules:
   - gate_proj
