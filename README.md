@@ -1,7 +1,7 @@
 # Mind-upload
 ## Preparation
 ### Dataset
-2-person chats work best as training data if you're going for a chat-like assistant, but you could probably also adapt things like essays or journals.  
+2-person chats work best as training data if you're going for a chat-like assistant, but you could probably also adapt things like essays or journals. You'll want a LOT of data, the more you can get the better. Ideally aim for a few hundred thousand tokens or more.  
 You should get your data into a multi-turn JSON format like the following. I won't tell you how to do it as that will depend on the source format.  
 Make sure that the sum of all "text" fields in a "segments" doesn't go over your context length or that example will be ignored. I find that randomly splitting runs of data (conversations) into many smaller 2-10-message-long "segments" sections helps with this and makes the model more robust to conversation length.  
 ```json
