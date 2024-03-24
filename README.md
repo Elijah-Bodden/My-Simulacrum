@@ -14,7 +14,7 @@ Make sure that the sum of all "text" fields in a "segments" doesn't go over your
       },
       {
         "label": true,
-        "text": "\nYOUR NAME: foo</s>\n"
+        "text": "\nYOUR NAME: foo\n"
       },
       {
         "label": false,
@@ -33,7 +33,7 @@ Make sure that the sum of all "text" fields in a "segments" doesn't go over your
 ```
 A few notes:
 - The first message in each `segments` should be from the other person (not you/the person you're trying to emulate) and it should have the \<s\> token, followed by the system prompt and a newline, prepended.
-- All messages from you should be sandwiched between two \n's. Add an \</s\> before the last one to prevent the model from rambling endlessly.
+- All messages from you should be sandwiched between two \n's. Add an \</s\> before the last one.
 - If one person sends multiple messages in a row, I keep them in one "text" block with newlines between them.
 - All messages that you want the model to train on (i.e. messages from you) should have a label field value of true.
 
@@ -77,7 +77,7 @@ Then prompt in the gradio according to your template. In the case of the data fo
 ```
 SYSTEM PROMPT
 PERSON A NAME: Blahblah
-YOUR NAME: Blahblah</s>
+YOUR NAME: Blahblah
 PERSON A NAME: Blahblah
 YOUR NAME:
 ```
