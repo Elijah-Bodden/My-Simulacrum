@@ -55,7 +55,7 @@ To set up and train:
 Create a pod (1xA40 works) with [this template](https://www.runpod.io/console/gpu-cloud?template=v2ickqhz9s&ref=6i7fkpdz)  
 Connect and run the following to set up, replacing {YOUR WANDB KEY} and both {YOUR GH USERNAME}'s with the appropriate values:  
 ```bash
-wget https://raw.githubusercontent.com/{YOUR GH USERNAME}/My-Simulacrum/main/run.bash {YOUR WANDB KEY} {YOUR GH USERNAME} && bash run.bash
+wget https://raw.githubusercontent.com/{YOUR GH USERNAME}/My-Simulacrum/main/run.bash && bash run.bash {YOUR WANDB KEY} {YOUR GH USERNAME}
 ```
 If you don't want to log on Weights and Biases, delete the value `wandb_project` in config.yml and type some random bullshit for {YOUR WANDB KEY}  
 
