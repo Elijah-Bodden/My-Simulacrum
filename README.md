@@ -1,7 +1,9 @@
 # Mind-upload
 ## Preparation
 ### Dataset
-2-person chats work best as training data if a chat-like assistant is what you're going for, but things like essays or journals could probably also be adapted if you used in-text-signifiers like "[ESSAY]" before an essay prompt. Ultimately, you should get your data into a multi-turn JSON format like the following. I won't tell you how to do it as it will depend on the source format. Make sure that the sum of all "text" fields in a "segments" doesn't go over your context length or that example will be ignored. I find that randomly splitting runs of data (conversations) into many smaller 2-10-message-long "segments" sections helps with this and makes the model more robust to conversation length.  
+2-person chats work best as training data if you're going for a chat-like assistant, but you could probably also adapt things like essays or journals.  
+You should get your data into a multi-turn JSON format like the following. I won't tell you how to do it as that will depend on the source format.  
+Make sure that the sum of all "text" fields in a "segments" doesn't go over your context length or that example will be ignored. I find that randomly splitting runs of data (conversations) into many smaller 2-10-message-long "segments" sections helps with this and makes the model more robust to conversation length.  
 ```json
 [
   {
@@ -43,24 +45,26 @@ YOUR NAME: foo
 PERSON A NAME: ah, I see
 YOUR NAME: mhm</s>
 ```
-Personally, I find that the system prompt `CONTEXT: Elijah, a friendly, highly intelligent, interesting, and ambitious teenager is talking to a friend.` works well. You can customize the description to mention traits you think the bot over/under represents. I replace PERSON A NAME with "friend" and YOUR NAME, obviously, with Elijah.
+As you may have noticed, all the templating/structure is given in the data, and the consecutive "text" fields just get concatenated together - we're going template free. This is because all axolotl templates refer to the llm as "assistant" or similar, which throws it off. See [here](https://openaccess-ai-collective.github.io/axolotl/docs/input_output.html) for more info on template-free formatting with axolotl.  
+I find that the system prompt `CONTEXT: Elijah, a friendly, highly intelligent, interesting, and ambitious teenager is talking to a friend.` works well. You can customize the description to mention traits you think the bot over/under represents. I replace PERSON A NAME with "friend" and YOUR NAME, obviously, with Elijah.
 Upload the dataset to huggingface and you're good to go.
 ### Config
 Now all that's left is the axolotl config. At this point you should to clone this repo. In config.yml you can obviously edit stuff like `base_model` and `num_epochs` to your liking. When you're satisfied just make sure to point the dataset path to your own dataset's huggingface locator.  
 ## Training and inference
-To setup and train:
+To set up and train:
 Create a pod (1xA40 works) with [this template](https://www.runpod.io/console/gpu-cloud?template=v2ickqhz9s&ref=6i7fkpdz)  
-Connect and run the following to set up, replacing YOUR WANDB KEY and both YOUR GH USERNAME's with the appropriate values:  
+Connect and run the following to set up, replacing {YOUR WANDB KEY} and both {YOUR GH USERNAME}'s with the appropriate values:  
 ```bash
 wget https://raw.githubusercontent.com/{YOUR GH USERNAME}/Mind-upload/main/run.bash {YOUR WANDB KEY} {YOUR GH USERNAME} && bash run.bash
 ```
-If you don't want to log on Weights and Biases, delete the value `wandb_project` in config.yml and type some random bullshit for YOUR WANDB KEY  
+If you don't want to log on Weights and Biases, delete the value `wandb_project` in config.yml and type some random bullshit for {YOUR WANDB KEY}  
 
 To make sure your examples are being formatted right (after running setup script) run:  
 ```
 wget https://raw.githubusercontent.com/{YOUR GH USERNAME}/Mind-upload/main/testformat.py
 python3 testformat.py
 ```
+and check the output.  
 To train your model, run 
 ```
 accelerate launch -m axolotl.cli.train config.yml
@@ -69,7 +73,7 @@ Then for inference:
 ```
 cd .. && cd axolotl && accelerate launch -m axolotl.cli.inference config.yml --lora_model_dir="./lora-out" --gradio
 ```
-Then prompt in the gradio according to your template. In the case of the data formatting I mentioned above, it should look like this(no need for a \<s\> token, it gets auto-added):
+Then prompt in the gradio according to your template. In the case of the data formatting I mentioned above, it should look like this (no need for a \<s\> token, it gets auto-added):
 ```
 SYSTEM PROMPT
 PERSON A NAME: Blahblah
