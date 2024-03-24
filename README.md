@@ -59,6 +59,7 @@ wget https://raw.githubusercontent.com/{YOUR GH USERNAME}/My-Simulacrum/main/run
 ```
 To make sure your examples are being formatted right (after running setup script) run:  
 ```
+cd .. && cd axolotl
 wget https://raw.githubusercontent.com/{YOUR GH USERNAME}/My-Simulacrum/main/testformat.py
 python3 testformat.py
 ```
