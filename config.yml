@@ -41,7 +41,7 @@ lora_target_modules:
   - k_proj
   - o_proj
 
-wandb_project: Mind upload
+wandb_project: Simulacrum
 wandb_entity:
 wandb_watch:
 wandb_name:
