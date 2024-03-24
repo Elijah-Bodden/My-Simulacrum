@@ -63,6 +63,7 @@ cd .. && cd axolotl
 wget https://raw.githubusercontent.com/{YOUR GH USERNAME}/My-Simulacrum/main/testformat.py
 python3 testformat.py
 ```
+Note: in general if you get unexplained errors, try cd-ing out of and back into the axolotl directory. No idea why this happens but it does.  
 and check the output.  
 To train your model, run 
 ```
