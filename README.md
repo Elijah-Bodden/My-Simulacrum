@@ -82,3 +82,10 @@ YOUR NAME: Blahblah
 PERSON A NAME: Blahblah
 YOUR NAME:
 ```
+## Merging and uploading to huggingface
+```
+python3 -m axolotl.cli.merge_lora your_config.yml --lora_model_dir="./lora-out"
+huggingface-cli login
+huggingface-cli upload ./lora-out/merged
+```
+
