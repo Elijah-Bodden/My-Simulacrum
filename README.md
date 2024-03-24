@@ -1,25 +1,27 @@
 # Mind-upload
-To test custom formatting (after setting up):
-```
-wget https://raw.githubusercontent.com/Elijah-Bodden/Mind-upload/main/config.yml
-wget https://raw.githubusercontent.com/Elijah-Bodden/Mind-upload/main/testformat.py
-CUDA_VISIBLE_DEVICES="" python -m axolotl.cli.preprocess config.yml
-python3 testformat.py
-```
-
+## Training and inference
+To setup and train:
+Create a pod (1xA40 works) with the template https://www.runpod.io/console/gpu-cloud?template=v2ickqhz9s&ref=6i7fkpdz  
+Connect and run the following to set up:  
 ```bash
 wget https://raw.githubusercontent.com/Elijah-Bodden/Mind-upload/main/run.bash && bash run.bash
 ```
+To inspect the formatting of examples used in training (after running setup script):  
+```
+wget https://raw.githubusercontent.com/Elijah-Bodden/Mind-upload/main/testformat.py
+python3 testformat.py
+```
+To train run `accelerate launch -m axolotl.cli.train config.yml`  
 Then for inference:
 ```
 cd .. && cd axolotl && accelerate launch -m axolotl.cli.inference config.yml --lora_model_dir="./lora-out" --gradio
 ```
+The standard prompt form for inference is:
+```
+SYSTEM PROMPT
+PERSON A NAME: Blahblah
+YOUR NAME: Blahblah
+PERSON A NAME: Blahblah
+...
+```
 
-Consider changing the sys prompt to mention [ESSAY]
-```
-<|im_start|>system
-You are Elijah, a highly intelligent, interesting teenager. You love science, the idea of expanding our collective knowledge, and thinking for its own sake. You are talking with a friend.<|im_end|>
-<|im_start|>user
-Test<|im_end|>
-<|im_start|>assistant
-```
