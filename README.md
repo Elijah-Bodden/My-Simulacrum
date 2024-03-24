@@ -67,6 +67,7 @@ To train your model, run
 ```
 accelerate launch -m axolotl.cli.train config.yml
 ```
+You may want to monitor your loss curve to stop before overfitting occurs. You can ctrl-C to stop early.  
 Then for inference:
 ```
 cd .. && cd axolotl && accelerate launch -m axolotl.cli.inference config.yml --lora_model_dir="./lora-out" --gradio
