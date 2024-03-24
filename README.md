@@ -1,4 +1,4 @@
-# Mind-upload
+# My-Simulacrum
 ## Preparation
 ### Dataset
 2-person chats work best as training data if you're going for a chat-like assistant, but you could probably also adapt things like essays or journals. You'll want a LOT of data, the more you can get the better. Ideally aim for a few hundred thousand tokens or more.  
@@ -55,13 +55,13 @@ To set up and train:
 Create a pod (1xA40 works) with [this template](https://www.runpod.io/console/gpu-cloud?template=v2ickqhz9s&ref=6i7fkpdz)  
 Connect and run the following to set up, replacing {YOUR WANDB KEY} and both {YOUR GH USERNAME}'s with the appropriate values:  
 ```bash
-wget https://raw.githubusercontent.com/{YOUR GH USERNAME}/Mind-upload/main/run.bash {YOUR WANDB KEY} {YOUR GH USERNAME} && bash run.bash
+wget https://raw.githubusercontent.com/{YOUR GH USERNAME}/My-Simulacrum/main/run.bash {YOUR WANDB KEY} {YOUR GH USERNAME} && bash run.bash
 ```
 If you don't want to log on Weights and Biases, delete the value `wandb_project` in config.yml and type some random bullshit for {YOUR WANDB KEY}  
 
 To make sure your examples are being formatted right (after running setup script) run:  
 ```
-wget https://raw.githubusercontent.com/{YOUR GH USERNAME}/Mind-upload/main/testformat.py
+wget https://raw.githubusercontent.com/{YOUR GH USERNAME}/My-Simulacrum/main/testformat.py
 python3 testformat.py
 ```
 and check the output.  
