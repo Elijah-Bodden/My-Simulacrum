@@ -29,7 +29,7 @@ Get your messages (or other traing materials) into a JSON file of the format:
   },
 ]
 ```
-Noting a few things. The first message in each `segments` should be from the other person (not you/the person you're trying to emulate) and it should have the <n> token, followed by the system prompt and a newline, prepended. All messages from you should be sandwiched between two \n's, and the last message in a series should end in a </s>. All messages that you want the model to train on (i.e. messages from you) should have a label field of true.  
+Noting a few things. The first message in each `segments` should be from the other person (not you/the person you're trying to emulate) and it should have the \<n\> token, followed by the system prompt and a newline, prepended. All messages from you should be sandwiched between two \n's, and the last message in a series should end in a \</s\>. All messages that you want the model to train on (i.e. messages from you) should have a label field of true.  
 This will compile to look like:  
 ```
 <n>SYSTEM PROMPT
