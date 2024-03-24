@@ -78,6 +78,5 @@ SYSTEM PROMPT
 PERSON A NAME: Blahblah
 YOUR NAME: Blahblah
 PERSON A NAME: Blahblah
-{...}
+YOUR NAME:
 ```
-The prompt must end on person A (the assistant will continue as you.)
