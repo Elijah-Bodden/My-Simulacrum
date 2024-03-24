@@ -55,7 +55,7 @@ To set up and train:
 Create a pod (1xA40 works) with [this template](https://www.runpod.io/console/gpu-cloud?template=v2ickqhz9s&ref=6i7fkpdz)  
 Connect and run the following to set up, replacing both {YOUR GH USERNAME}'s with the appropriate value:  
 ```bash
-wget https://raw.githubusercontent.com/{YOUR GH USERNAME}/My-Simulacrum/main/run.bash && bash run.bash {YOUR WANDB KEY} {YOUR GH USERNAME}
+wget https://raw.githubusercontent.com/{YOUR GH USERNAME}/My-Simulacrum/main/run.bash && bash run.bash {YOUR GH USERNAME}
 ```
 To make sure your examples are being formatted right (after running setup script) run:  
 ```
