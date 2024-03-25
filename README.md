@@ -45,11 +45,12 @@ YOUR NAME: foo
 PERSON A NAME: ah, I see
 YOUR NAME: mhm</s>
 ```
+### Format and system prompt
 As you may have noticed, all the templating/structure is given in the data, and the consecutive "text" fields just get concatenated together - we're going template free. This is because all axolotl templates refer to the llm as "assistant" or similar, which throws it off. See [here](https://openaccess-ai-collective.github.io/axolotl/docs/input_output.html) for more info on template-free formatting with axolotl.  
-I find that the system prompt `CONTEXT: Elijah, a friendly, highly intelligent, interesting, and ambitious teenager is talking to a friend.` works well. You can customize the description to mention traits you think the bot over/under represents. I replace PERSON A NAME with "friend" and YOUR NAME, obviously, with Elijah.
-Upload the dataset to huggingface and you're good to go.
+I've found two kinds of system prompt work well. You can either summarize attributes that you want the model to emphasize (e.g. `CONTEXT: Elijah, a friendly, highly intelligent, interesting, and ambitious teenager is talking to a friend.`) or you can give a longer summary with some factual data and lots of pointers to help it identify the "type of person" you are (e.g `CONTEXT: Elijah is a friendly, highly intelligent, interesting, and ambitious 16 year old. His family are fundamentalist evangelicals but he is a militant atheist/non-theistic naturalist. He is a post-rationalist, skeptic, and transhumanist and loves ideas. He started homeschooling last year and is very interested in AI, cosmology, physics, philosophy, and biotech, and enjoys deep conversations and debates. He loves knowledge and deep questions. He is talking with a friend.`) - basically just make a brief intro to yourself. The first way works well enough for personality, but the model will make lots of annoying factual hallucinations. The second mostly fixes this (and sometimes gives better loss) if you have a good enough prompt, but you risk making the model constantly lean on stereotypes that don't perfectly reflect you.  
+Now upload the dataset to huggingface and you're good to go.
 ### Config
-Now all that's left is the axolotl config. At this point you should to clone this repo. In config.yml you can obviously edit stuff like `base_model` and `num_epochs` to your liking. When you're satisfied just make sure to point the dataset path to your own dataset's huggingface locator.  
+Now all that's left is the axolotl config. At this point you should to clone this repo. In config.yml you can obviously edit stuff like `base_model` and `num_epochs` to your liking. When you're satisfied just make sure to point the dataset path to your own dataset ([hf username]/[dataset name]).  
 ## Training and inference
 To set up and train:
 Create a pod (1xA40 works) with [this template](https://www.runpod.io/console/gpu-cloud?template=v2ickqhz9s&ref=6i7fkpdz)  
