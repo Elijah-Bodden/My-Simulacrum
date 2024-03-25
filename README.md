@@ -84,6 +84,7 @@ PERSON A NAME: Blahblah
 YOUR NAME:
 ```
 ## Merging and uploading to huggingface
+You can merge the lora into the base and upload to huggingface with the following. Now you should be able to use your model with transformers anywhere.
 ```
 python3 -m axolotl.cli.merge_lora your_config.yml --lora_model_dir="./lora-out"
 huggingface-cli login
